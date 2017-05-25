@@ -1,7 +1,7 @@
 module.exports = {
     entry: './public/src/index.js',
     output: {
-        path: './public/src',
+        path: './public/',
         filename: './bundle.js'
     },
     resolve: {
@@ -16,9 +16,10 @@ module.exports = {
             test: /\.jsx?$/,
             exclude: /(node_modules|bower_components)/
         }]
+    },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: './public/',
+        port:9000
     }
-    // devServer: {
-    //     historyApiFallback: true,
-    //     contentBase: './'
-    // }
 };
